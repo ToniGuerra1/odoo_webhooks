@@ -16,9 +16,6 @@ class ResPartner(models.Model):
     def action_send_webhook_from_partner(self):
         """ Envía un webhook con los datos del cliente/proveedor. """
 
-        license_status = self.env['ir.config_parameter'].sudo().get_param('webhook.license_status', 'invalid')
-        if license_status != 'valid':
-            raise UserError("La licencia no es válida. No se puede enviar el Webhook.")
         
         for partner in self:
             if partner.webhook_config_id:
