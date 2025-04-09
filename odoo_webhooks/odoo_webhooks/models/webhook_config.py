@@ -52,9 +52,7 @@ class WebhookConfig(models.Model):
         # Aquí se podría usar el módulo requests de Odoo (disponible en Odoo 17).
         # Ejemplo con la librería interna de Odoo:
 
-        license_status = self.env['ir.config_parameter'].sudo().get_param('webhook.license_status', 'invalid')
-        if license_status != 'valid':
-            raise UserError("La licencia no es válida. No se puede enviar el Webhook.")
+
     
 
         import requests
