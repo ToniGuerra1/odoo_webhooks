@@ -55,6 +55,4 @@ No se ofrece soporte técnico posterior a la compra. Si necesitas personalizacio
 
 ## 🧑‍💻 Autor
 
-Desarrollado por Toni (Cannactiva)  
-[webhook@cannactiva.com](mailto:webhook@cannactiva.com)
-
+Desarrollado por Toni Guerra
