@@ -16,9 +16,6 @@ class StockPicking(models.Model):
     def action_send_webhook_from_picking(self):
         """ Envía un webhook con los datos del movimiento de stock. """
 
-        license_status = self.env['ir.config_parameter'].sudo().get_param('webhook.license_status', 'invalid')
-        if license_status != 'valid':
-            raise UserError("La licencia no es válida. No se puede enviar el Webhook.")
         
         for picking in self:
             if picking.webhook_config_id:
