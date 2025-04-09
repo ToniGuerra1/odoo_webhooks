@@ -3,6 +3,7 @@
     'version': '1.0',
     'author': 'Toni Guerra',
     'category': 'Tools',
+    "summary": "Send real-time Webhooks from Odoo to external systems like APIs, CRMs, ERPs or Zapier",
     'description': """
 🔗 Webhook Integration for Odoo
 
