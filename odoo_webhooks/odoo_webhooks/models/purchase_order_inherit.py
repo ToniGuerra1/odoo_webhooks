@@ -15,9 +15,7 @@ class PurchaseOrder(models.Model):
 
     def action_send_webhook_from_purchase(self):
         """ Envía un webhook con los datos de la orden de compra. """
-        license_status = self.env['ir.config_parameter'].sudo().get_param('webhook.license_status', 'invalid')
-        if license_status != 'valid':
-            raise UserError("La licencia no es válida. No se puede enviar el Webhook.")
+
         
         for order in self:
             if order.webhook_config_id:
