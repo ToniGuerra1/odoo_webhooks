@@ -61,6 +61,7 @@ Send real-time data from Odoo to any external system using Webhooks. Ideal for A
         'views/account_move_inherit_views.xml',
         'views/webhook_log_views.xml',
         'views/webhook_config_validate_views.xml',
+        'static/description/icon.png',
     ],
     'installable': True,
     'application': True,
