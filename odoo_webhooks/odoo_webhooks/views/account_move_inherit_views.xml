@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_account_move_form_inherit_webhook" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.webhook</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Webhooks">
+                    <group>
+                        <field name="webhook_config_id"/>
+                        <button name="action_send_webhook_from_invoice"
+                                type="object"
+                                string="Enviar Webhook"
+                                class="oe_highlight"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

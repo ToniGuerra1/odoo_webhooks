@@ -1,0 +1,55 @@
+<!-- security/webhook_config_access.xml -->
+<odoo>
+    <data noupdate="1">
+        <!-- Modelo y permisos para webhook.config -->
+        <record id="model_webhook_config" model="ir.model">
+            <field name="name">Webhook Config</field>
+            <field name="model">webhook.config</field>
+        </record>
+
+        <record id="access_webhook_config" model="ir.model.access">
+            <field name="name">access_webhook_config</field>
+            <field name="model_id" ref="model_webhook_config"/>
+            <!-- Si quieres restringir a Administradores de Ajustes:
+                 <field name="group_id" ref="base.group_system"/> -->
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <!-- Modelo y permisos para webhook.log -->
+        <record id="model_webhook_log" model="ir.model">
+            <field name="name">Webhook Log</field>
+            <field name="model">webhook.log</field>
+        </record>
+
+        <record id="access_webhook_log" model="ir.model.access">
+            <field name="name">access_webhook_log</field>
+            <field name="model_id" ref="model_webhook_log"/>
+            <!-- Si quieres restringir a Administradores de Ajustes:
+            <field name="group_id" ref="base.group_system"/> -->
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <!-- Modelo y permisos para webhook.config.validate -->
+        <record id="model_webhook_config_validate" model="ir.model">
+            <field name="name">Webhook Validate</field>
+            <field name="model">webhook.config.validate</field>
+        </record>
+
+        <record id="access_webhook_config_validate" model="ir.model.access">
+            <field name="name">access_webhook_config_validate</field>
+            <field name="model_id" ref="model_webhook_config_validate"/>
+            <!-- Si quieres restringir a Administradores de Ajustes:
+            <field name="group_id" ref="base.group_system"/> -->
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+    </data>
+</odoo>

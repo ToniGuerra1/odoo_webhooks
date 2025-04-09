@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_product_form_inherit_webhook" model="ir.ui.view">
+        <field name="name">product.product.form.inherit.webhook</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Insertar en la pestaña de inventario -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Webhooks">
+                    <group>
+                        <field name="webhook_config_id"/>
+                        <button name="action_send_webhook_from_product"
+                                type="object"
+                                string="Enviar Webhook"
+                                class="oe_highlight"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

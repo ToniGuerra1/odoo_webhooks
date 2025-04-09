@@ -1,0 +1,1 @@
+from . import product_product_inherit, sale_order_inherit, account_move_inherit, purchase_order_inherit, res_partner_inherit, stock_picking_inherit, webhook_config, webhook_log, webhook_config_validate

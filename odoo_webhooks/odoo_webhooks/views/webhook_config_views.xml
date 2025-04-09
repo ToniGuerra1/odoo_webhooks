@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Acción para abrir la vista de webhooks -->
+    <record id="view_webhook_config_action" model="ir.actions.act_window">
+        <field name="name">Webhooks</field>
+        <field name="res_model">webhook.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vistas del modelo webhook.config -->
+    <record id="view_webhook_config_form" model="ir.ui.view">
+        <field name="name">webhook.config.form</field>
+        <field name="model">webhook.config</field>
+        <field name="arch" type="xml">
+            <form string="Configuración de Webhook">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="endpoint"/>
+                        <field name="model_id"/>
+                        <field name="field_ids" widget="many2many_tags"/>
+                        <field name="timeout"/>
+                    </group>
+                    <group>
+                        <field name="json_editable" widget="text"/>
+                    </group>
+                </sheet>
+                <header>
+                    <button string="Enviar Webhook" type="object" name="action_send_webhook" class="btn-primary"/>
+                    <button string="Descartar" class="btn-secondary" special="cancel"/>
+                </header>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_webhook_config_tree" model="ir.ui.view">
+        <field name="name">webhook.config.tree</field>
+        <field name="model">webhook.config</field>
+        <field name="arch" type="xml">
+            <tree string="Webhooks">
+                <field name="name"/>
+                <field name="endpoint"/>
+                <field name="model_id"/>
+                <field name="timeout"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Menú principal en Settings/Technical -->
+    <menuitem id="menu_webhook_root" name="Webhooks" parent="base.menu_custom" sequence="14" groups="base.group_system"/>
+
+
+    <!-- Menú directo a la acción, sin herencias ni padres complicados -->
+    <menuitem id="menu_webhook_config_accion"
+              name="Webhooks"
+              action="view_webhook_config_action"
+              sequence="16"
+              parent="menu_webhook_root"
+              groups="base.group_system"/>
+
+</odoo>

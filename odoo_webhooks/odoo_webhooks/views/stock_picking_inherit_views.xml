@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_stock_picking_form_inherit_webhook" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.webhook</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Webhooks">
+                    <group>
+                        <field name="webhook_config_id"/>
+                        <button name="action_send_webhook_from_picking"
+                                type="object"
+                                string="Enviar Webhook"
+                                class="oe_highlight"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
